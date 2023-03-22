@@ -20,3 +20,4 @@ jobs:
         with:
           registry: https://npm.pkg.github.com
           token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
