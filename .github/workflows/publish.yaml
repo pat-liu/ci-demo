@@ -10,3 +10,15 @@ jobs:
           echo "todo"
           npm install
           npm run lint
+  publish:
+    name: Run publish
+    runs-on: ubuntu-latest
+    steps:
+      - needs: lint
+      - uses: 
+        - actions/checkout@v2
+        - JS-DevTools/npm-publish@v1
+          with:
+            registry: https://npm.pkg.github.com
+            token: ${{ secrets.GITHUB_TOKEN }}
+
